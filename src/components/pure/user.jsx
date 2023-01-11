@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import User from '../../models/user.class';
 
 const UserComponent = ({ user}) =>{
+    
+    const[estado , setEstado] = useState(user.conected);
+
+    const changeState = () => {
+        setEstado(!estado)
+
+        console.log('cambio estado', estado);
+
+        console.log('cambio conect', user.conected);
+    }
+
     return(
         <div>
             <h2>
@@ -15,8 +26,13 @@ const UserComponent = ({ user}) =>{
                 Email: { user.email }
             </h4>
             <h5>
-                This user is : { user.conected ? "Contacto En Línea" : "Contacto No Disponible"}
+                This user is : { estado ? "Contacto En Línea" : "Contacto No Disponible"}
             </h5>
+            <div>
+                <button onClick={changeState}>
+                    Cambiar estado
+                </button>
+            </div> 
         </div>
     );
 }

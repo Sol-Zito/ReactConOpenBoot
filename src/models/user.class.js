@@ -5,6 +5,8 @@ export default class User {
     lastname ='';
     email = '';
     conected = false ;
+
+  
     
     constructor(name, lastname, email, conected){
         this.name = name;

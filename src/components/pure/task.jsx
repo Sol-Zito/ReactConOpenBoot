@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Task } from '../../models/task.class';
 
 const TaskComponent = ({ task }) => {
-    return(
+
+    useEffect(() => {
+        console.log('task created');
+
+        return () => {
+            console.log(`task: ${task.name} is going to unmount`);
+        }
+    }, [task]);
+
+    return (
         <div>
             <h2>
-                Nombre: { task.name }
+                Nombre: {task.name}
             </h2>
             <h3>
-                Description: { task.description }
+                Description: {task.description}
             </h3>
             <h4>
-                Level: { task.level }
+                Level: {task.level}
             </h4>
             <h5>
-                This task is : { task.completed ? "Completed" : "No olvides realizarme"}
+                This task is : {task.completed ? "Completed" : "No olvides realizarme"}
             </h5>
         </div>
     );

@@ -5,10 +5,6 @@ import UserComponent from '../pure/user';
 const UserContainer = () =>{
     const defaultUser = new User('Sol', 'Zito', 'solzito@gmail.com', false)
 
-    const changeState = (id) => {
-        console.log('cambiar el estado');
-    }
-
     return(
         <div>
             <div>
@@ -17,6 +13,7 @@ const UserContainer = () =>{
                 </h1>
             </div>
             <UserComponent user={defaultUser}> </UserComponent>
+            
         </div>
     );
 }
