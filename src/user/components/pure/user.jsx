@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import User from '../../models/user.class';
 
+//user b
+
 const UserComponent = ({ user}) =>{
     
     const[estado , setEstado] = useState(user.conected);
